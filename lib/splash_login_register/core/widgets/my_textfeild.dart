@@ -24,7 +24,7 @@ class MyTextField extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           border: Border.all(color: Colors.black, width: 2),
-          color: Colors.white.withOpacity(0.5)),
+          color: Colors.white.withOpacity(0.4)),
       child: Center(
         child: TextFormField(
           textInputAction: textInputAction ?? TextInputAction.next,
