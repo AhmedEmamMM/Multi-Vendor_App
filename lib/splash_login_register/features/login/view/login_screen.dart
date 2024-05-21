@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/splash_login_register/core/constants/images.dart';
-import 'package:four_apps_in_one_multi_user_app/splash_login_register/core/widgets/my_button.dart';
-import 'package:four_apps_in_one_multi_user_app/splash_login_register/core/widgets/my_textfeild.dart';
-import 'package:four_apps_in_one_multi_user_app/splash_login_register/features/register/view/register_screen.dart';
+import 'package:four_apps_in_one_multi_user_app/core/constants/images.dart';
+import 'package:four_apps_in_one_multi_user_app/core/widgets/my_button.dart';
+import 'package:four_apps_in_one_multi_user_app/core/widgets/my_textfeild.dart';
 
 class Login extends StatelessWidget {
   final void Function()? onTap;
@@ -59,11 +58,7 @@ class Login extends StatelessWidget {
                       color: Colors.white.withOpacity(0.3),
                     ),
                     child: GestureDetector(
-                      onTap: () => Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => const Register(),
-                        ),
-                      ),
+                      onTap: onTap,
                       child: RichText(
                           text: const TextSpan(
                               text: 'Don\'t have an account?  ',

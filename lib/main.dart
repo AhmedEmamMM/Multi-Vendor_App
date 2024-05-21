@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:four_apps_in_one_multi_user_app/splash_login_register/features/login/view/login_screen.dart';
+import 'splash_login_register/features/login/view/login_or_register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData.light(useMaterial3: true),
-          home: const Login(),
+          home: const LoginOrRegister(),
         );
       },
     );
