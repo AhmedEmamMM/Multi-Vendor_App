@@ -1,9 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/view/widgets/custom_app_bar.dart';
+import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
 import 'package:four_apps_in_one_multi_user_app/splash_login_register_sutibale_page_to_view/data/models/user.dart';
-
-import '../../../../../global_core/auth/auth_service.dart';
+import '../../../../../global_core/widgets/custom_container.dart';
+import 'widgets/categories_list_view.dart';
+import 'widgets/list_view_heading.dart';
+import 'widgets/nearby_restaurant_list_view.dart';
 
 class ClientHome extends StatelessWidget {
   final UserData userData;
@@ -11,108 +13,29 @@ class ClientHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Welcome ${userData.name}'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () {
-                if (FirebaseAuth.instance.currentUser != null) {
-                  AuthService().signOut();
-                }
-              },
-              icon: const Icon(Icons.exit_to_app))
-        ],
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            Text(
-              'UID :  ${userData.uid}',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                foreground: Paint()
-                  ..shader = const LinearGradient(
-                    colors: [
-                      Colors.red,
-                      Colors.blue,
-                    ],
-                  ).createShader(
-                    const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                  ),
-              ),
-            ),
-            25.verticalSpace,
-            Text(
-              'Name :  ${userData.name}',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                foreground: Paint()
-                  ..shader = const LinearGradient(
-                    colors: [
-                      Colors.red,
-                      Colors.blue,
-                    ],
-                  ).createShader(
-                    const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                  ),
-              ),
-            ),
-            25.verticalSpace,
-            Text(
-              'Email :  ${userData.email}',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                foreground: Paint()
-                  ..shader = const LinearGradient(
-                    colors: [
-                      Colors.red,
-                      Colors.blue,
-                    ],
-                  ).createShader(
-                    const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                  ),
-              ),
-            ),
-            25.verticalSpace,
-            Text(
-              'Password :  ${userData.password}',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                foreground: Paint()
-                  ..shader = const LinearGradient(
-                    colors: [
-                      Colors.red,
-                      Colors.blue,
-                    ],
-                  ).createShader(
-                    const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                  ),
-              ),
-            ),
-            25.verticalSpace,
-            Text(
-              'Type :  ${userData.userType}',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                foreground: Paint()
-                  ..shader = const LinearGradient(
-                    colors: [
-                      Colors.red,
-                      Colors.blue,
-                    ],
-                  ).createShader(
-                    const Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
-                  ),
-              ),
-            ),
-          ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: PreferredSize(
+            preferredSize: Size(widthOfTheScreen(context), 90),
+            child: const CustomAppBar()),
+        body: CustomContainer(
+          customContainerContent: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const ListViewHeading(text: 'Categories'),
+              6.verticalSpace,
+              const CategoriesListView(),
+              6.verticalSpace,
+              const ListViewHeading(text: 'Nearby Restaurant'),
+              6.verticalSpace,
+              const NearbyRestaurantListView(),
+              6.verticalSpace,
+              const ListViewHeading(text: 'Hot Foods'),
+              6.verticalSpace,
+              const NearbyRestaurantListView(),
+              30.verticalSpace,
+            ],
+          ),
         ),
       ),
     );

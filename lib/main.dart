@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/routes/app_routes.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/routes/routes_names.dart';
 import 'firebase_options.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(scaffoldBackgroundColor: Colors.amber.shade300),
+          theme: ThemeData(scaffoldBackgroundColor: kPrimary),
           initialRoute: RoutesNames.authGatePage,
           onGenerateRoute: appRoutes.onGenerateRoutes,
         );

@@ -39,6 +39,8 @@ dependencies:
   flutter_native_splash: ^2.4.0
   flutter_screenutil: ^5.9.1
   get_it: ^7.7.0
+  curved_navigation_bar: ^1.0.3
+  shimmer: ^3.0.0
 
 dev_dependencies:
 
