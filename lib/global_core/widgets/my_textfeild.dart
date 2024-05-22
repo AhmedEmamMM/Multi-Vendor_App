@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyTextField extends StatelessWidget {
   final String? hintText;
@@ -6,6 +7,7 @@ class MyTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final TextInputAction? textInputAction;
   final TextInputType? keyboardType;
+  final bool? obscureText;
   const MyTextField({
     super.key,
     this.hintText,
@@ -13,6 +15,7 @@ class MyTextField extends StatelessWidget {
     this.validator,
     this.textInputAction,
     this.keyboardType,
+    this.obscureText,
   });
 
   @override
@@ -27,11 +30,12 @@ class MyTextField extends StatelessWidget {
           color: Colors.white.withOpacity(0.4)),
       child: Center(
         child: TextFormField(
+          obscureText: obscureText ?? false,
           textInputAction: textInputAction ?? TextInputAction.next,
           validator: validator,
           controller: controller,
           keyboardType: keyboardType ?? TextInputType.name,
-          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
           decoration: InputDecoration(
             errorBorder: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.red, width: 2),
@@ -42,8 +46,7 @@ class MyTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
             ),
             hintText: hintText,
-            hintStyle:
-                const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            hintStyle: TextStyle(fontSize:18.sp, fontWeight: FontWeight.bold),
             border: InputBorder.none,
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  final String? text;
+  final Widget child;
   final void Function()? onPressed;
   final Color? backGroudcolor;
   final TextStyle? textStyle;
@@ -11,7 +11,7 @@ class MyButton extends StatelessWidget {
   final double? height;
   const MyButton({
     super.key,
-    required this.text,
+    required this.child,
     required this.onPressed,
     this.backGroudcolor,
     this.textStyle,
@@ -30,12 +30,7 @@ class MyButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(circularBorderRadius ?? 16)),
       color: backGroudcolor ?? Colors.amber,
-      child: Text(
-        text ?? "Click ",
-        style: textStyle ??
-            const TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
-      ),
+      child: child,
     );
   }
 }
