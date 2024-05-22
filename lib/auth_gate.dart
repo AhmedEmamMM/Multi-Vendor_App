@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home_screen/logic/client_cubit.dart';
-import 'all_users/client/features/client_home_screen/view/client_home_screen.dart';
-import 'splash_login_register/view/login_or_register.dart';
+import 'package:four_apps_in_one_multi_user_app/splash_login_register_sutibale_page_to_view/logic/client_cubit/client_cubit.dart';
+import 'splash_login_register_sutibale_page_to_view/view/get_user_data_and_view_page_depend_on_user_type.dart';
+import 'splash_login_register_sutibale_page_to_view/view/login_or_register.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
@@ -20,7 +20,7 @@ class AuthGate extends StatelessWidget {
           if (snapshot.hasData) {
             return BlocProvider(
               create: (context) => clientCubit..getUserData(),
-              child: const ClientHomeScreen(),
+              child: const GetUserDataAndViewSutiblaAppDependOnUserType(),
             );
           }
           // user is not logged in
