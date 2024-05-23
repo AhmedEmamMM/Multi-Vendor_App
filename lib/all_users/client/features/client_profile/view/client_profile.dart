@@ -1,121 +1,83 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:four_apps_in_one_multi_user_app/splash_login_register_sutibale_page_to_view/data/models/user.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
+import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
+import 'package:four_apps_in_one_multi_user_app/splash_login_register_sutibale_page_to_view/logic/client_cubit/client_cubit.dart';
 import '../../../../../global_core/auth/auth_service.dart';
 import '../../../../../global_core/widgets/custom_container.dart';
+import 'widgets/cover_proile_photos.dart';
+import 'widgets/the_three_buttons.dart';
 
 class ClientProfile extends StatelessWidget {
-  final UserData userData;
-  const ClientProfile({super.key, required this.userData});
+  const ClientProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Welcome ${userData.name} to ur Profile'),
-        centerTitle: true,
-        actions: [
-          IconButton(
-              onPressed: () {
-                if (FirebaseAuth.instance.currentUser != null) {
-                  AuthService().signOut();
-                }
-              },
-              icon: const Icon(Icons.exit_to_app))
-        ],
-      ),
-      body: CustomContainer(
-        customContainerContent: Center(
-          child: Column(
-            children: [
-              Text(
-                'UID :  ${userData.uid}',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  foreground: Paint()
-                    ..shader = const LinearGradient(
-                      colors: [
-                        Colors.red,
-                        Colors.blue,
-                      ],
-                    ).createShader(
-                      const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                    ),
+    return SafeArea(
+      child: BlocBuilder<ClientCubit, ClientState>(
+        builder: (context, state) {
+          if (state is GetUserDataSuccess) {
+            return Scaffold(
+              body: CustomContainer(
+                isThereAppBar: false,
+                padding: EdgeInsets.zero,
+                customContainerContent: Center(
+                  child: Column(
+                    children: [
+                      const CoverAndProfilePhotosStack(),
+                      5.verticalSpace,
+                      Text(
+                        state.userData.name,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Colors.blue.shade900,
+                        ),
+                      ),
+                      Text(
+                        state.userData.email,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: kGray,
+                        ),
+                      ),
+                      Text(
+                        state.userData.uid,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: kGray,
+                        ),
+                      ),
+                      Text(
+                        state.userData.userType,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: kGray,
+                        ),
+                      ),
+                      15.verticalSpace,
+                      TheThreeButtons(
+                        editOnTap: () {},
+                        myFavoriteOnTap: () {},
+                        exitOnTap: () {
+                          if (FirebaseAuth.instance.currentUser != null) {
+                            AuthService().signOut();
+                          }
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              25.verticalSpace,
-              Text(
-                'Name :  ${userData.name}',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  foreground: Paint()
-                    ..shader = const LinearGradient(
-                      colors: [
-                        Colors.red,
-                        Colors.blue,
-                      ],
-                    ).createShader(
-                      const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                    ),
-                ),
-              ),
-              25.verticalSpace,
-              Text(
-                'Email :  ${userData.email}',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  foreground: Paint()
-                    ..shader = const LinearGradient(
-                      colors: [
-                        Colors.red,
-                        Colors.blue,
-                      ],
-                    ).createShader(
-                      const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                    ),
-                ),
-              ),
-              25.verticalSpace,
-              Text(
-                'Password :  ${userData.password}',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  foreground: Paint()
-                    ..shader = const LinearGradient(
-                      colors: [
-                        Colors.red,
-                        Colors.blue,
-                      ],
-                    ).createShader(
-                      const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
-                    ),
-                ),
-              ),
-              25.verticalSpace,
-              Text(
-                'Type :  ${userData.userType}',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  foreground: Paint()
-                    ..shader = const LinearGradient(
-                      colors: [
-                        Colors.red,
-                        Colors.blue,
-                      ],
-                    ).createShader(
-                      const Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
-                    ),
-                ),
-              ),
-            ],
-          ),
-        ),
+            );
+          } else {
+            return const Center(child: Text('No Data To show'));
+          }
+        },
       ),
     );
   }

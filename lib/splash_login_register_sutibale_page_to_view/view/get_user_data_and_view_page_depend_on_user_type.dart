@@ -21,7 +21,7 @@ class GetUserDataAndViewSutiblaAppDependOnUserType extends StatelessWidget {
           if (state.userData.userType == "client") {
             return BlocProvider<ClientDashBoardCubit>(
               create: (context) => clientDashBoardCubit,
-              child: ClientDashBoard(userData: state.userData),
+              child: const ClientDashBoard(),
             );
           } else {
             return const Center(child: Text('Unknown'));
