@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TheImage extends StatelessWidget {
-  final restaurants;
-
+  final dynamic restaurants;
   const TheImage({
     super.key,
     required this.restaurants,

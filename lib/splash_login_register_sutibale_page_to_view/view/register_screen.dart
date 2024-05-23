@@ -36,8 +36,6 @@ class _RegisterState extends State<Register> {
       } else {
         print('Passwords donst match');
       }
-      // await getIt<AuthService>().signInWithEmailPassword(
-      //     email: emailController.text, password: passwordController.text);
       setState(() {
         isLoading = false;
       });

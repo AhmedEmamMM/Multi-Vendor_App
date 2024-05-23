@@ -27,7 +27,7 @@ class _ClientSearchState extends State<ClientSearch> {
         actions: [
           IconButton(
             onPressed: () {
-              print(searchController.text);
+              debugPrint(searchController.text);
               searchController.clear();
             },
             icon: const Icon(Icons.search, size: 35, color: Colors.black),
@@ -35,14 +35,15 @@ class _ClientSearchState extends State<ClientSearch> {
         ],
       ),
       body: const CustomContainer(
-          isThereAppBar: true,
-          customContainerContent: Column(
-            children: [
-              Center(
-                child: Text('What wanna search for'),
-              )
-            ],
-          )),
+        isThereAppBar: true,
+        customContainerContent: Column(
+          children: [
+            Center(
+              child: Text('What wanna search for'),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
