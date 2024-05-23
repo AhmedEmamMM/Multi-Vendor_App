@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../../global_core/constants/constants.dart';
 import '../../../../../../global_core/constants/uidata.dart';
 import '../../../../../../global_core/helpers/helpers.dart';
-import 'the_image.dart';
+import 'the_image_for_restaurants.dart';
 
 class NearbyRestaurantListView extends StatelessWidget {
   const NearbyRestaurantListView({
@@ -29,7 +29,7 @@ class NearbyRestaurantListView extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  TheImage(restaurants: restaurant),
+                  TheImageForRestaurants(restaurants: restaurant),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -48,13 +48,15 @@ class NearbyRestaurantListView extends StatelessWidget {
                         ],
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text('Rating :    '),
                           Text(
                             ' +${restaurant['ratingCount']}',
-                            style: const TextStyle(
-                                color: kPrimary, fontSize: 18),
+                            style:
+                                const TextStyle(color: kPrimary, fontSize: 18),
                           ),
+                          const Icon(Icons.favorite_outline, size: 20),
                         ],
                       ),
                     ],
@@ -68,4 +70,3 @@ class NearbyRestaurantListView extends StatelessWidget {
     );
   }
 }
-

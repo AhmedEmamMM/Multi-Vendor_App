@@ -19,13 +19,15 @@ class ClientDashBoard extends StatelessWidget {
             onTap: (index) => dashBoardCubit.setNewPageIndex(index),
             body: dashBoardCubit.clientPagesList[state.index],
           );
-        } else {
+        } else if (state is BottomNavIndexInitialState) {
           return DashBoardScaffold(
-            index: 2,
+            index: state.index,
             items: dashBoardCubit.bottomNavIconsList,
             onTap: (index) => dashBoardCubit.setNewPageIndex(index),
-            body: dashBoardCubit.clientPagesList[2],
+            body: dashBoardCubit.clientPagesList[state.index],
           );
+        } else {
+          return Container();
         }
       },
     );

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/data/models/food.dart';
 
-class TheImage extends StatelessWidget {
-  final dynamic restaurants;
-  const TheImage({
-    super.key,
-    required this.restaurants,
-  });
+class TheImageForFoods extends StatelessWidget {
+  final Food food;
+  const TheImageForFoods({super.key, required this.food});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +13,7 @@ class TheImage extends StatelessWidget {
         width: double.infinity,
         height: 98,
         child: Image.network(
-          restaurants['imageUrl'],
+          food.imageUrl.toString(),
           fit: BoxFit.fitWidth,
         ),
       ),

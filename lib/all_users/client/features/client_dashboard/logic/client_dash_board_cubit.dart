@@ -14,7 +14,7 @@ import '../../client_search/view/client_search.dart';
 part 'client_dash_board_state.dart';
 
 class ClientDashBoardCubit extends Cubit<ClientDashBoardState> {
-  ClientDashBoardCubit() : super(ClientDashBoardInitial());
+  ClientDashBoardCubit() : super(BottomNavIndexInitialState());
 
   // bottom navigation bar  icons list
   List<Widget> bottomNavIconsList = [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/view/widgets/custom_app_bar.dart';
+import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/view/widgets/hot_foods_list_view.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
 import '../../../../../global_core/widgets/custom_container.dart';
 import 'widgets/categories_list_view.dart';
@@ -31,7 +32,7 @@ class ClientHome extends StatelessWidget {
               6.verticalSpace,
               const ListViewHeading(text: 'Hot Foods'),
               6.verticalSpace,
-              const NearbyRestaurantListView(),
+              const HotFoodsListView(),
               30.verticalSpace,
             ],
           ),
