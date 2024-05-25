@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/data/models/food.dart';
+import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/data/models/food_model.dart';
 import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/view/pages/food_details.dart';
 import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/view/widgets/the_image_for_foods.dart';
 import '../../../../../../global_core/constants/constants.dart';

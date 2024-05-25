@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../global_core/helpers/helpers.dart';
 import 'my_custom_cliper.dart';
@@ -11,8 +12,8 @@ class CoverPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
-      width: widthOfTheScreen(context),
+      height: 250.h,
+      width: widthOfTheScreen(context).w,
       child: ClipPath(
         clipper: MyCustomCliper(),
         child: Container(

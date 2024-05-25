@@ -3,11 +3,11 @@ import 'dart:convert';
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 class UserData {
-  final String uid;
-  final String name;
-  final String email;
-  final String password;
-  final String userType;
+  String? uid;
+  String? name;
+  String? email;
+  String? password;
+  String? userType;
 
   UserData(this.uid, this.name, this.email, this.password, this.userType);
 

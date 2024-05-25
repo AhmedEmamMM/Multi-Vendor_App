@@ -31,7 +31,7 @@ class _RegisterState extends State<Register> {
 
     try {
       if (passwordController.text == rePasswordController.text) {
-        await AuthService().signUpWithEmailPassword(
+        AuthService().signUpWithEmailPassword(
             nameController.text, emailController.text, passwordController.text);
       } else {
         print('Passwords donst match');
@@ -44,6 +44,9 @@ class _RegisterState extends State<Register> {
     } catch (e) {
       debugPrint(e.toString());
     }
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override

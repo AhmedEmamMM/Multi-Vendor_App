@@ -11,47 +11,33 @@ class AuthService {
   }
 
   // user sign in
-  Future<UserCredential> signInWithEmailPassword(
-      {required String email, password}) async {
+  void signInWithEmailPassword({required String email, password}) async {
     try {
-      UserCredential userCredential = await auth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      await auth.signInWithEmailAndPassword(email: email, password: password);
+
       // save user info if it dosent already exsit
-      firestore.collection("Users").doc(userCredential.user!.uid).set(
-        {
-          "uid": userCredential.user!.uid,
-          "email": email,
-          "password": password,
-        },
-      );
-      return userCredential;
     } on FirebaseAuthException catch (e) {
       throw Exception(e.code);
     }
   }
 
   // sign up
-  Future<UserCredential> signUpWithEmailPassword(
-      String name, email, password) async {
+  void signUpWithEmailPassword(String name, email, password) async {
     try {
       // create user
-      UserCredential userCredential = await auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      await auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+          
       // save user info in a separate doc
-      firestore.collection("Users").doc(userCredential.user!.uid).set(
+      firestore.collection("Users").doc(auth.currentUser!.uid).set(
         {
-          "uid": userCredential.user!.uid,
+          "uid": auth.currentUser!.uid,
           "name": name,
           "email": email,
           "password": password,
           "userType": "client",
         },
       );
-      return userCredential;
     } on FirebaseAuthException catch (e) {
       throw Exception(e.code);
     }

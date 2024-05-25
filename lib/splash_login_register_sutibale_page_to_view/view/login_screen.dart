@@ -28,7 +28,7 @@ class _LoginState extends State<Login> {
     });
 
     try {
-      await AuthService().signInWithEmailPassword(
+      AuthService().signInWithEmailPassword(
           email: emailController.text, password: passwordController.text);
     } on FirebaseAuthException catch (e) {
       debugPrint(e.code.toString());
@@ -78,20 +78,19 @@ class _LoginState extends State<Login> {
                   ),
                   SizedBox(height: 75.h),
                   MyButton(
-                    backGroudcolor: Colors.white.withOpacity(0.7),
-                    onPressed: () async {
-                      await signIn();
-                    },
-                    child: isLoading
-                        ? const CircularProgressIndicator(color: Colors.black)
-                        : const Text(
-                            "Sign In",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          ),
-                  ),
+                      backGroudcolor: Colors.white.withOpacity(0.7),
+                      onPressed: () async {
+                        await signIn();
+                      },
+                      child: isLoading
+                          ? const CircularProgressIndicator(color: Colors.black)
+                          : const Text(
+                              "Sign In",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
+                            )),
                   75.verticalSpace,
                   SwapBetweenLoginAndRegisterText(
                     text1: 'Don\'t have an Account?  ',

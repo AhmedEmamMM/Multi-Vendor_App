@@ -1,5 +1,7 @@
+import 'additvies_model.dart';
+
 class Food {
-  String? sId;
+  String? foodID;
   String? title;
   List<String>? foodTags;
   List<String>? foodType;
@@ -10,14 +12,14 @@ class Food {
   String? ratingCount;
   String? description;
   double? price;
-  List<Additives>? additives;
   String? imageUrl;
   int? iV;
-  String? category;
+  String? categoryID;
   String? time;
+  List<Additives>? additives;
 
   Food(
-      {this.sId,
+      {this.foodID,
       this.title,
       this.foodTags,
       this.foodType,
@@ -28,14 +30,14 @@ class Food {
       this.ratingCount,
       this.description,
       this.price,
-      this.additives,
       this.imageUrl,
       this.iV,
-      this.category,
-      this.time});
+      this.categoryID,
+      this.time,
+      this.additives});
 
   Food.fromJson(Map<String, dynamic> json) {
-    sId = json['_id'];
+    foodID = json['_id'];
     title = json['title'];
     foodTags = json['foodTags'].cast<String>();
     foodType = json['foodType'].cast<String>();
@@ -46,21 +48,21 @@ class Food {
     ratingCount = json['ratingCount'];
     description = json['description'];
     price = json['price'];
+    imageUrl = json['imageUrl'];
+    iV = json['__v'];
+    categoryID = json['categoryID'];
+    time = json['time'];
     if (json['additives'] != null) {
       additives = <Additives>[];
       json['additives'].forEach((v) {
         additives!.add(Additives.fromJson(v));
       });
     }
-    imageUrl = json['imageUrl'];
-    iV = json['__v'];
-    category = json['category'];
-    time = json['time'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['_id'] = sId;
+    data['_id'] = foodID;
     data['title'] = title;
     data['foodTags'] = foodTags;
     data['foodType'] = foodType;
@@ -71,35 +73,13 @@ class Food {
     data['ratingCount'] = ratingCount;
     data['description'] = description;
     data['price'] = price;
+    data['imageUrl'] = imageUrl;
+    data['__v'] = iV;
+    data['categoryID'] = categoryID;
+    data['time'] = time;
     if (additives != null) {
       data['additives'] = additives!.map((v) => v.toJson()).toList();
     }
-    data['imageUrl'] = imageUrl;
-    data['__v'] = iV;
-    data['category'] = category;
-    data['time'] = time;
-    return data;
-  }
-}
-
-class Additives {
-  int? id;
-  String? title;
-  String? price;
-
-  Additives({this.id, this.title, this.price});
-
-  Additives.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    title = json['title'];
-    price = json['price'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['title'] = title;
-    data['price'] = price;
     return data;
   }
 }

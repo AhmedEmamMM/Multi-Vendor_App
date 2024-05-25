@@ -6,6 +6,7 @@ class DashBoardScaffold extends StatelessWidget {
   final List<Widget> items;
   final void Function(int)? onTap;
   final Widget? body;
+
   const DashBoardScaffold({
     super.key,
     required this.index,

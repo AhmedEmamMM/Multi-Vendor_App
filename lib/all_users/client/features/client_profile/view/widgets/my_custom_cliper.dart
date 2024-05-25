@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyCustomCliper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    var radius = 50.0;
-    var controlPoint = Offset(size.width * 0.65, size.height * 0.5);
-    var controlPoint2 = Offset(size.width * 0.35, size.height * 0.5);
-    var endPoint = Offset(size.width * 0.25, size.height - 30);
+    var radius = 50.0.r;
+    var controlPoint = Offset((size.width * 0.65).w, (size.height * 0.5).h);
+    var controlPoint2 = Offset((size.width * 0.35).w, (size.height * 0.5).h);
+    var endPoint = Offset((size.width * 0.25).w, (size.height - 30).h);
     Path path = Path()
       // p1 (0,0)  top left
-      ..lineTo(size.width, 0) // p2
-      ..lineTo(size.width, size.height) // p3
-      ..lineTo(size.width * 0.85, size.height - 2) // p4
-      ..arcToPoint(Offset((size.width * 0.75), size.height - 30),
+      ..lineTo((size.width).w, 0) // p2
+      ..lineTo((size.width).w, (size.height).h) // p3
+      ..lineTo((size.width * 0.85).w, (size.height - 2).h) // p4
+      ..arcToPoint(Offset((size.width * 0.75).w, (size.height - 30).h),
           radius: Radius.circular(radius), clockwise: true) //p5
       ..cubicTo(controlPoint.dx, controlPoint.dy, controlPoint2.dx,
           controlPoint2.dy, endPoint.dx, endPoint.dy) //p6
-      ..arcToPoint(Offset(size.width * 0.15, size.height - 2),
+      ..arcToPoint(Offset((size.width* 0.15).w, (size.height - 2).h),
           radius: Radius.circular(radius)) //p7
-      ..lineTo(0, size.height) // p8
+      ..lineTo(0, (size.height).h) // p8
       ..close();
 
     return path;

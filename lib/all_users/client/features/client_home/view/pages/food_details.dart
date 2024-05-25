@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/data/models/food.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/widgets/my_button.dart';
-
+import '../../data/models/food_model.dart';
 import 'widgets/custom_icon_button.dart';
 
 class FoodDetails extends StatelessWidget {

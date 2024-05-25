@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/logic/client_home_cubit.dart';
 import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/view/widgets/custom_app_bar.dart';
 import 'package:four_apps_in_one_multi_user_app/all_users/client/features/client_home/view/widgets/hot_foods_list_view.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
@@ -17,25 +19,36 @@ class ClientHome extends StatelessWidget {
         appBar: PreferredSize(
             preferredSize: Size(widthOfTheScreen(context), 90),
             child: const CustomAppBar()),
-        body: CustomContainer(
-          isThereAppBar: true,
-          customContainerContent: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const ListViewHeading(text: 'Categories'),
-              6.verticalSpace,
-              const CategoriesListView(),
-              6.verticalSpace,
-              const ListViewHeading(text: 'Nearby Restaurant'),
-              6.verticalSpace,
-              const NearbyRestaurantListView(),
-              6.verticalSpace,
-              const ListViewHeading(text: 'Hot Foods'),
-              6.verticalSpace,
-              const HotFoodsListView(),
-              30.verticalSpace,
-            ],
-          ),
+        body: BlocBuilder<ClientHomeCubit, ClientHomeState>(
+          builder: (context, state) {
+            if (state is GetAllRestaurantsLoading) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (state is GetAllRestaurantsSuccess) {
+              return CustomContainer(
+                isThereAppBar: true,
+                customContainerContent: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const ListViewHeading(text: 'Categories'),
+                    6.verticalSpace,
+                    const CategoriesListView(),
+                    6.verticalSpace,
+                    const ListViewHeading(text: 'Nearby Restaurant'),
+                    6.verticalSpace,
+                    NearbyRestaurantListView(
+                        allRestaurants: state.allRestaurants),
+                    6.verticalSpace,
+                    const ListViewHeading(text: 'Hot Foods'),
+                    6.verticalSpace,
+                    const HotFoodsListView(),
+                    30.verticalSpace,
+                  ],
+                ),
+              );
+            } else {
+              return const SizedBox();
+            }
+          },
         ),
       ),
     );
