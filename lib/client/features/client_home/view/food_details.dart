@@ -3,8 +3,8 @@ import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.
 import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
 import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/providers/cart_provider.dart';
-import '../../data/models/food_model.dart';
-import 'custom_icon_button.dart';
+import '../data/models/food_model.dart';
+import 'widgets/custom_icon_button.dart';
 
 class FoodDetails extends StatefulWidget {
   final Food food;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/restaurant_details.dart';
+import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/restaurant_details.dart';
 
 import '../../../../../global_core/constants/constants.dart';
 import '../../../../../global_core/helpers/helpers.dart';

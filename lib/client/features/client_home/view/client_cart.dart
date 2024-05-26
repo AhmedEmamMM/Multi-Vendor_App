@@ -1,5 +1,7 @@
+import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/check_out_page.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/clear_the_cart.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/my_cart_tile.dart';
+import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
 import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/providers/cart_provider.dart';
@@ -30,7 +32,7 @@ class ClientCart extends StatelessWidget {
             ],
           ),
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 35),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
             child: Column(
               children: [
                 userCart.isEmpty
@@ -56,28 +58,35 @@ class ClientCart extends StatelessWidget {
                       )
                     : Expanded(
                         child: ListView.builder(
-                            itemCount: userCart.length,
-                            itemBuilder: (context, index) {
-                              //get individual cart item
-                              final cartItem = userCart[index];
-                              // return cart tile ui
-                              return MyCartTile(cartItem: cartItem);
-                            }),
+                          itemCount: userCart.length,
+                          itemBuilder: (context, index) {
+                            //get individual cart item
+                            final cartItem = userCart[index];
+                            // return cart tile ui
+                            return MyCartTile(cartItem: cartItem);
+                          },
+                        ),
                       ),
-                20.verticalSpace,
+                10.verticalSpace,
                 userCart.isEmpty
                     ? const Text("")
                     : MyButton(
-                        onPressed: () {},
-                        // => Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => const CheckOutPage(),
-                        //   ),
-                        // ),
-                        backGroudcolor: Colors.white.withOpacity(0.8),
-                        child: const Text("Go to Cheackout"),
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const CheckOutPage(),
+                          ),
+                        ),
+                        backGroudcolor: kOffWhite,
+                        child: const Text(
+                          "Go to Cheackout",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
                       ),
+                20.verticalSpace,
               ],
             ),
           ),

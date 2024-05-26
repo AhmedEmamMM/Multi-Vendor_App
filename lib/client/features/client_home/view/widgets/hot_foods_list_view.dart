@@ -1,6 +1,6 @@
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/logic/client_cart_cubit/client_cart_cubit.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/food_model.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/food_details.dart';
+import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/food_details.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/food_details_row_under_photo.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/the_image_for_foods.dart';
 import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/cart_item.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/quantity_selector.dart';
+import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
 
 class MyCartTile extends StatelessWidget {
   final CartItem cartItem;
@@ -10,11 +11,12 @@ class MyCartTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
+        color: kOffWhite,
+        border: Border.all(color: kGray, width: 2),
         borderRadius: BorderRadius.circular(8),
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Column(
         children: [
           Padding(
@@ -31,33 +33,40 @@ class MyCartTile extends StatelessWidget {
                     width: 140,
                   ),
                 ),
-                10.horizontalSpace,
-
+                const Spacer(),
                 // name and price
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     //food name
-                    Text(cartItem.food.title!),
+                    Text(
+                      cartItem.food.title!,
+                      style: const TextStyle(
+                        color: kGray,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
 
                     // food price
                     Text(
                       "\$ ${cartItem.food.price}",
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                      style: const TextStyle(
+                        color: kGray,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
+                    ),
+                    4.verticalSpace,
+                    QuantitySelector(
+                      quantity: cartItem.quantity,
+                      food: cartItem.food,
+                      onIncreimant: () {},
+                      onDecrement: () {},
                     ),
                   ],
                 ),
-
                 const Spacer(),
-
-                // incremant or decrment
-                QuantitySelector(
-                    quantity: cartItem.quantity,
-                    food: cartItem.food,
-                    onIncreimant: () {},
-                    onDecrement: () {}),
               ],
             ),
           ),
@@ -73,13 +82,13 @@ class MyCartTile extends StatelessWidget {
                     (additive) => Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: FilterChip(
+                        color: const MaterialStatePropertyAll(kSecondary),
                         label: Row(
                           children: [
-                            // addon name
+                            // additive name
                             Text(additive.title!),
                             10.horizontalSpace,
-
-                            // addon price
+                            // additive price
                             Text(" ( \$ ${additive.price} )"),
                           ],
                         ),
@@ -88,11 +97,10 @@ class MyCartTile extends StatelessWidget {
                           color: Theme.of(context).colorScheme.primary,
                         )),
                         onSelected: (value) {},
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondary,
-                        labelStyle: TextStyle(
-                          color: Theme.of(context).colorScheme.inversePrimary,
-                          fontSize: 12,
+                        labelStyle: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
                         ),
                       ),
                     ),

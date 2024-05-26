@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:four_apps_in_one_multi_user_app/auth_gate/data/repo/user_repo.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/client_cart.dart';
+import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/client_cart.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/client_home.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_search/view/client_search.dart';
 import 'package:four_apps_in_one_multi_user_app/auth_gate/view/auth_gate.dart';

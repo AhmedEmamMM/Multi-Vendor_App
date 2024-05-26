@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/logic/client_home_cubit/client_home_cubit.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/client_cart.dart';
+import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/client_cart.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/custom_app_bar.dart';
 import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/hot_foods_list_view.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
