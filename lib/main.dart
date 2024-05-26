@@ -2,14 +2,19 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
+import 'package:four_apps_in_one_multi_user_app/global_core/providers/cart_provider.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/routes/app_routes.dart';
 import 'package:four_apps_in_one_multi_user_app/global_core/routes/routes_names.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(MyApp(appRoutes: AppRoutes()));
+  runApp(ChangeNotifierProvider(
+    create: (context) => CartProvider(),
+    child: MyApp(appRoutes: AppRoutes()),
+  ));
 }
 
 class MyApp extends StatelessWidget {

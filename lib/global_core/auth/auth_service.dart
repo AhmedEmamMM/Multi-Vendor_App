@@ -27,7 +27,7 @@ class AuthService {
       // create user
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
-          
+
       // save user info in a separate doc
       firestore.collection("Users").doc(auth.currentUser!.uid).set(
         {
@@ -46,6 +46,11 @@ class AuthService {
   // sign out
   Future<void> signOut() async {
     return await auth.signOut();
+  }
+
+  Future<bool> isLoggedIn() async {
+    var user = FirebaseAuth.instance.currentUser;
+    return user != null;
   }
 
   // errors
