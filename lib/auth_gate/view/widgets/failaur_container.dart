@@ -1,4 +1,4 @@
-import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
+import '../../imports/imports.dart';
 
 class FaliaurContanier extends StatelessWidget {
   final String message;

@@ -1,5 +1,5 @@
-import 'package:four_apps_in_one_multi_user_app/auth_gate/data/repo/user_repo.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
+import '../data/repo/user_repo.dart';
+import '../imports/imports.dart';
 
 import '../data/models/user.dart';
 

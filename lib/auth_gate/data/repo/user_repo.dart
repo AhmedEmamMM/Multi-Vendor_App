@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/data/models/user.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
+import '../models/user.dart';
+import '../../imports/imports.dart';
 
 class UserRepo {
   final firebaseAuthInstance = FirebaseAuth.instance;

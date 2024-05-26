@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_search/view/widgets/app_bar_text_field.dart';
+import 'widgets/app_bar_text_field.dart';
 import '../../../../global_core/widgets/custom_container.dart';
 
 class ClientSearch extends StatefulWidget {

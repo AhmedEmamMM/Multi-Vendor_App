@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/delivery_progres_page.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/widgets/my_button.dart';
+import 'delivery_progres_page.dart';
+import '../../../../global_core/constants/constants.dart';
+import '../../../../global_core/helpers/helpers.dart';
+import '../../../../global_core/widgets/my_button.dart';
 
 class CheckOutPage extends StatefulWidget {
   const CheckOutPage({super.key});

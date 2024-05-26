@@ -1,9 +1,9 @@
 import 'package:collection/collection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/cart_item.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/additvies_model.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/food_model.dart';
+import '../../data/models/cart_item.dart';
+import '../../data/models/additvies_model.dart';
+import '../../data/models/food_model.dart';
 
 part 'client_cart_state.dart';
 

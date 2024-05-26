@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/restauran_model.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
+import '../data/models/restauran_model.dart';
+import '../../../../global_core/helpers/helpers.dart';
 
 class RestaurantDetails extends StatelessWidget {
   final Restaurant restaurant;

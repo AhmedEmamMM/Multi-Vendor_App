@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/food_model.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
+import '../../data/models/food_model.dart';
+import '../../../../../global_core/constants/constants.dart';
 
 class QuantitySelector extends StatelessWidget {
   final int quantity;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
+import '../../../../../global_core/constants/constants.dart';
 
 class ListViewHeading extends StatelessWidget {
   final String text;

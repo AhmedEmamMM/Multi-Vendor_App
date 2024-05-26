@@ -1,8 +1,8 @@
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/additvies_model.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/providers/cart_provider.dart';
+import '../data/models/additvies_model.dart';
+import '../../../../global_core/constants/constants.dart';
+import '../../../../global_core/helpers/helpers.dart';
+import '../../../../auth_gate/imports/imports.dart';
+import '../../../../global_core/providers/cart_provider.dart';
 import '../data/models/food_model.dart';
 import 'widgets/custom_icon_button.dart';
 

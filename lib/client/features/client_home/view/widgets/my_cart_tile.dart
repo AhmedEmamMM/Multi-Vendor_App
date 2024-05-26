@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/cart_item.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/quantity_selector.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
+import '../../data/models/cart_item.dart';
+import 'quantity_selector.dart';
+import '../../../../../global_core/constants/constants.dart';
 
 class MyCartTile extends StatelessWidget {
   final CartItem cartItem;

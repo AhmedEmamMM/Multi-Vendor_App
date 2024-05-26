@@ -1,7 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/data/models/user.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
+import '../../../../global_core/constants/constants.dart';
+import '../../../../auth_gate/data/models/user.dart';
+import '../../../../auth_gate/imports/imports.dart';
 import '../../../../global_core/widgets/custom_container.dart';
 import 'widgets/cover_proile_photos.dart';
 import 'widgets/the_three_buttons.dart';

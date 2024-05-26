@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/data/repo/user_repo.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/client_cart.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/client_home.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_search/view/client_search.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/view/auth_gate.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/routes/routes_names.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/logic/auth_gate_cubit.dart';
+import '../../auth_gate/data/repo/user_repo.dart';
+import '../../client/features/client_home/view/client_cart.dart';
+import '../../client/features/client_home/view/client_home.dart';
+import '../../client/features/client_search/view/client_search.dart';
+import '../../auth_gate/view/auth_gate.dart';
+import 'routes_names.dart';
+import '../../auth_gate/logic/auth_gate_cubit.dart';
 
 class AppRoutes {
   Route? onGenerateRoutes(RouteSettings settings) {

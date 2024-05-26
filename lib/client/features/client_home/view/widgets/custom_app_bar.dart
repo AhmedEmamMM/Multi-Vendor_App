@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
+import '../../../../../global_core/constants/constants.dart';
+import '../../../../../global_core/helpers/helpers.dart';
 
 class CustomAppBar extends StatelessWidget {
   final void Function()? onPressed;

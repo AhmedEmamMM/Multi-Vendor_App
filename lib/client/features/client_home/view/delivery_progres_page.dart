@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/my_recipt.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
+import 'widgets/my_recipt.dart';
+import '../../../../global_core/constants/constants.dart';
+import '../../../../global_core/helpers/helpers.dart';
 
 class DeliveryProgresPage extends StatelessWidget {
   const DeliveryProgresPage({super.key});

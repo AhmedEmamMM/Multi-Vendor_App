@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/logic/client_home_cubit/client_home_cubit.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/client_cart.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/custom_app_bar.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/hot_foods_list_view.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/providers/cart_provider.dart';
+import '../logic/client_home_cubit/client_home_cubit.dart';
+import 'client_cart.dart';
+import 'widgets/custom_app_bar.dart';
+import 'widgets/hot_foods_list_view.dart';
+import '../../../../global_core/helpers/helpers.dart';
+import '../../../../global_core/providers/cart_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../../global_core/widgets/custom_container.dart';
 import 'widgets/categories_list_view.dart';

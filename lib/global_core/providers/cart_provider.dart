@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/additvies_model.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/cart_item.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/food_model.dart';
+import '../../client/features/client_home/data/models/additvies_model.dart';
+import '../../client/features/client_home/data/models/cart_item.dart';
+import '../../client/features/client_home/data/models/food_model.dart';
 import 'package:intl/intl.dart';
 
 class CartProvider extends ChangeNotifier {

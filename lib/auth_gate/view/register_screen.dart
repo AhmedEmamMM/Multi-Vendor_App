@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/auth/auth_service.dart';
+import '../../global_core/auth/auth_service.dart';
 import '../../global_core/widgets/my_button.dart';
 import '../../global_core/widgets/my_textfeild.dart';
 import 'widgets/heading.dart';

@@ -1,7 +1,7 @@
-import 'package:four_apps_in_one_multi_user_app/global_core/widgets/loading_progress_indicator.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/data/models/user.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/view/widgets/failaur_container.dart';
+import '../../global_core/widgets/loading_progress_indicator.dart';
+import '../data/models/user.dart';
+import '../imports/imports.dart';
+import 'widgets/failaur_container.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});

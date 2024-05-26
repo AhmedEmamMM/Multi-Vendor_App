@@ -1,10 +1,10 @@
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/check_out_page.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/clear_the_cart.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/view/widgets/my_cart_tile.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/constants/constants.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
-import 'package:four_apps_in_one_multi_user_app/auth_gate/imports/imports.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/providers/cart_provider.dart';
+import 'check_out_page.dart';
+import 'widgets/clear_the_cart.dart';
+import 'widgets/my_cart_tile.dart';
+import '../../../../global_core/constants/constants.dart';
+import '../../../../global_core/helpers/helpers.dart';
+import '../../../../auth_gate/imports/imports.dart';
+import '../../../../global_core/providers/cart_provider.dart';
 import 'package:provider/provider.dart';
 
 class ClientCart extends StatelessWidget {

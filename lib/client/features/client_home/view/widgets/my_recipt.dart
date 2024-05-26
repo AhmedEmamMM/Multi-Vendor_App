@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/helpers/helpers.dart';
-import 'package:four_apps_in_one_multi_user_app/global_core/providers/cart_provider.dart';
+import '../../../../../global_core/helpers/helpers.dart';
+import '../../../../../global_core/providers/cart_provider.dart';
 import 'package:provider/provider.dart';
 
 class MyReceipt extends StatelessWidget {

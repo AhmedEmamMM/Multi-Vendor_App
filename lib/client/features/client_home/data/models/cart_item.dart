@@ -1,5 +1,5 @@
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/additvies_model.dart';
-import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/food_model.dart';
+import 'additvies_model.dart';
+import 'food_model.dart';
 
 class CartItem {
   Food food;
