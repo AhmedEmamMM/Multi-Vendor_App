@@ -3,12 +3,10 @@ List<dynamic> myRestaurants = [
     "_id": "6530ebbcc9e72013e5b65933",
     "title": "Lapisara Eatery",
     "time": "6:00am - 9:00pm",
-    "imageUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
     "owner": "Ahmed Mohamed Emam",
     "code": "41007428",
-    "logoUrl":
-        "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+    "logoUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
     "rating": 5,
     "ratingCount": "675",
     "coords": {
@@ -25,8 +23,7 @@ List<dynamic> myRestaurants = [
         "_id": "6531209dbbe4998e90af3fef",
         "title": "Pasta",
         "value": "pasta",
-        "imageUrl":
-            "https://d326fntlu7tb1e.cloudfront.net/uploads/6645cf41-bc89-4dd0-9f80-bba9487633b2-Spaghetti.png",
+        "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/6645cf41-bc89-4dd0-9f80-bba9487633b2-Spaghetti.png",
         "foods": [
           {
             "_id": "65316968f94c6496dc84f3c1",

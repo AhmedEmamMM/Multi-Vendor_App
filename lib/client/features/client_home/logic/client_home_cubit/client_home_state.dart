@@ -5,14 +5,19 @@ sealed class ClientHomeState {}
 
 final class ClientHomeInitial extends ClientHomeState {}
 
-class GetAllRestaurantsLoading extends ClientHomeState {}
+// the 3 restaurants state
+class GetAllRestaurantsAndCategoriesLoading extends ClientHomeState {}
 
-class GetAllRestaurantsSuccess extends ClientHomeState {
+class GetAllRestaurantsAndCategoriesSuccess extends ClientHomeState {
   final List<Restaurant> allRestaurants;
-  GetAllRestaurantsSuccess(this.allRestaurants);
+  final List<Category> allCategories;
+  GetAllRestaurantsAndCategoriesSuccess(
+    this.allRestaurants,
+    this.allCategories,
+  );
 }
 
-class GetAllRestaurantsFaliuer extends ClientHomeState {
+class GetAllRestaurantsAndCategoriesFaliuer extends ClientHomeState {
   final String theError;
-  GetAllRestaurantsFaliuer(this.theError);
+  GetAllRestaurantsAndCategoriesFaliuer(this.theError);
 }

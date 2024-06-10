@@ -1,4 +1,20 @@
 import 'package:flutter/material.dart';
+class Helpers {
+  static findById(list, String id) {
+    findById(obj) => obj.id == id;
+    var result = list.where(findById);
+    return result.length > 0 ? result.first : null;
+  }
+  
+  static findCategoryByName(list, String categoryName) {
+    findById(category) => category.name == categoryName;
+    var result = list.where(findById);
+    return result.length > 0 ? result.first : null;
+  }
+
+  static Color hexColor(String color) => Color(int.parse("FF${color.toUpperCase().replaceAll("#", '')}", radix: 16));
+}
+
 
 extension ExtNumber on num {
   get verticalSpace => SizedBox(height: toDouble());
@@ -13,7 +29,7 @@ extension Navigation on BuildContext {
   }
 
   Future<dynamic> navigatoAndRemoveAll(Widget pageName) {
-    return Navigator.of(this).pushReplacement(MaterialPageRoute(
+    return Navigator.of(this).pushReplacement(MaterialPageRoute( 
       builder: (context) => pageName,
     ));
   }
@@ -36,8 +52,7 @@ extension Navigation on BuildContext {
   void pop() => Navigator.of(this).pop();
 }
 
-Color hexColor(String color) =>
-    Color(int.parse("FF${color.toUpperCase().replaceAll("#", '')}", radix: 16));
+
 
 class HexColor extends Color {
   static int _getColor(String hex) {

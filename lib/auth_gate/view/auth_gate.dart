@@ -9,7 +9,7 @@ class AuthGate extends StatelessWidget {
   Widget goToClinetDashBoard(UserData userData) {
     return BlocProvider<ClientHomeCubit>(
         create: (context) =>
-            ClientHomeCubit(ClientHomeRepo())..getAllRestaurants(),
+            ClientHomeCubit(ClientHomeRepo())..getRestaurantsAndCategoires(),
         child: ClientDashBoard(userData: userData));
   }
 

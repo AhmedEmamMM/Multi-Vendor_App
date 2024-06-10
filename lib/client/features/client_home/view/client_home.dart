@@ -34,9 +34,9 @@ class ClientHome extends StatelessWidget {
             builder: (context, cartProvier, child) =>
                 BlocBuilder<ClientHomeCubit, ClientHomeState>(
               builder: (context, state) {
-                if (state is GetAllRestaurantsLoading) {
+                if (state is GetAllRestaurantsAndCategoriesLoading) {
                   return const Center(child: CircularProgressIndicator());
-                } else if (state is GetAllRestaurantsSuccess) {
+                } else if (state is GetAllRestaurantsAndCategoriesSuccess) {
                   return CustomContainer(
                     isThereAppBar: true,
                     customContainerContent: Column(
@@ -44,7 +44,7 @@ class ClientHome extends StatelessWidget {
                       children: [
                         const ListViewHeading(text: 'Categories'),
                         6.verticalSpace,
-                        const CategoriesListView(),
+                        CategoriesListView(allCategories: state.allCategories),
                         6.verticalSpace,
                         const ListViewHeading(text: 'Nearby Restaurant'),
                         6.verticalSpace,

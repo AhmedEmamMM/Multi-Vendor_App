@@ -124,7 +124,7 @@ class CartProvider extends ChangeNotifier {
 
     for (final cartItem in _cart) {
       receipt.writeln(
-          "${cartItem.quantity} x ${cartItem.food.title} - ${_formatPrice(cartItem.food.price!)}");
+          "${cartItem.quantity} x ${cartItem.food.name} - ${_formatPrice(cartItem.food.price!)}");
       if (cartItem.selectedAdditives.isNotEmpty) {
         receipt.writeln(
             "   Add-ons: ${_formatAddons(cartItem.selectedAdditives)}");

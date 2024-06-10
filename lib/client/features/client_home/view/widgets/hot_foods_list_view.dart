@@ -44,11 +44,11 @@ class HotFoodsListView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           RowOfFoodDetails(
-                              leftText: food.title.toString(),
+                              leftText: food.name.toString(),
                               rightText: '\$ ${food.price}'),
-                          RowOfFoodDetails(
+                          const RowOfFoodDetails(
                               leftText: 'Delivery time : ',
-                              rightText: food.time.toString()),
+                              rightText: 'about 30 min'),
                           RowOfFoodDetails(
                               leftText: 'Rating : ',
                               rightText: '+${food.ratingCount}'),

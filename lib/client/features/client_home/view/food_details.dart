@@ -38,6 +38,8 @@ class _FoodDetailsState extends State<FoodDetails> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SizedBox(
         height: heightOfTheScreen(context),
@@ -47,29 +49,38 @@ class _FoodDetailsState extends State<FoodDetails> {
               Stack(
                 children: [
                   Container(
-                    height: heightOfTheScreen(context) * 0.45,
+                    height: heightOfTheScreen(context) * 0.41,
                     width: widthOfTheScreen(context),
                     decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
+                        color: Colors.grey.shade500,
                         borderRadius: BorderRadius.only(
                           bottomLeft:
-                              Radius.circular(widthOfTheScreen(context) * 0.38),
+                              Radius.circular(widthOfTheScreen(context) * 0.28),
                           bottomRight:
-                              Radius.circular(widthOfTheScreen(context) * 0.38),
+                              Radius.circular(widthOfTheScreen(context) * 0.28),
                         )),
                   ),
                   Positioned(
-                    bottom: 50,
-                    left: 22,
+                    top: height * 0.143,
                     child: Container(
-                      height: 200,
-                      width: 350,
+                      margin: EdgeInsets.symmetric(horizontal: width * 0.0250),
+                      padding: const EdgeInsets.all(3),
+                      height: height * 0.25,
+                      width: width * 0.95,
                       decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image:
-                                  NetworkImage(widget.food.imageUrl.toString()),
-                              fit: BoxFit.fill),
-                          borderRadius: BorderRadius.circular(100)),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Container(
+                        height: height * 0.25,
+                        width: width * 0.90,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    widget.food.imageUrl.toString()),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.circular(100)),
+                      ),
                     ),
                   ),
                   Padding(
@@ -89,17 +100,6 @@ class _FoodDetailsState extends State<FoodDetails> {
                       ],
                     ),
                   ),
-                  Positioned(
-                      bottom: 10,
-                      left: 150,
-                      child: Text(
-                        '\$ ${widget.food.price}',
-                        style: const TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.red,
-                        ),
-                      ))
                 ],
               ),
               Padding(
@@ -109,12 +109,25 @@ class _FoodDetailsState extends State<FoodDetails> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // food title
-                    Text(
-                      widget.food.title.toString(),
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          widget.food.name!,
+                          style: const TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          '\$ ${widget.food.price}',
+                          style: const TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red,
+                          ),
+                        )
+                      ],
                     ),
                     // rating and number of orders
                     Row(
@@ -218,7 +231,8 @@ class _FoodDetailsState extends State<FoodDetails> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      onPressed: () => addToCart(widget.food,widget.selectedAdditives),
+                      onPressed: () =>
+                          addToCart(widget.food, widget.selectedAdditives),
                     ),
                   ],
                 ),

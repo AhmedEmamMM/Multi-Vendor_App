@@ -49,8 +49,7 @@ class NearbyRestaurantListView extends StatelessWidget {
                           children: [
                             const Text('Delivery time'),
                             Text(restaurant.time.toString(),
-                                style: const TextStyle(
-                                    color: kPrimary, fontSize: 16)),
+                                style: const TextStyle(fontSize: 16)),
                           ],
                         ),
                         Row(
@@ -62,7 +61,6 @@ class NearbyRestaurantListView extends StatelessWidget {
                               style: const TextStyle(
                                   color: kPrimary, fontSize: 18),
                             ),
-                            const Icon(Icons.favorite_outline, size: 20),
                           ],
                         ),
                       ],

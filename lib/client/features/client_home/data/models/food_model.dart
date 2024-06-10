@@ -1,57 +1,48 @@
-import 'additvies_model.dart';
+import 'package:four_apps_in_one_multi_user_app/client/features/client_home/data/models/additvies_model.dart';
 
 class Food {
   String? foodID;
-  String? title;
-  List<String>? foodTags;
-  List<String>? foodType;
-  String? code;
-  bool? isAvailable;
-  String? restaurant;
-  double? rating;
-  String? ratingCount;
+  String? restaurantCode;
+  String? categoryID;
+  String? name;
   String? description;
   double? price;
+  bool? isAvailable;
+  double? rating;
+  String? ratingCount;
   String? imageUrl;
-  int? iV;
-  String? categoryID;
-  String? time;
+  List<String>? foodType;
+  List<String>? foodTags;
   List<Additives>? additives;
 
   Food(
       {this.foodID,
-      this.title,
+      this.restaurantCode,
+      this.categoryID,
+      this.name,
       this.foodTags,
       this.foodType,
-      this.code,
       this.isAvailable,
-      this.restaurant,
       this.rating,
       this.ratingCount,
       this.description,
       this.price,
       this.imageUrl,
-      this.iV,
-      this.categoryID,
-      this.time,
       this.additives});
 
   Food.fromJson(Map<String, dynamic> json) {
-    foodID = json['_id'];
-    title = json['title'];
+    foodID = json['foodID'];
+    restaurantCode = json['restaurantCode'];
+    categoryID = json['categoryID'];
+    name = json['name'];
     foodTags = json['foodTags'].cast<String>();
     foodType = json['foodType'].cast<String>();
-    code = json['code'];
     isAvailable = json['isAvailable'];
-    restaurant = json['restaurant'];
     rating = json['rating'];
     ratingCount = json['ratingCount'];
     description = json['description'];
     price = json['price'];
     imageUrl = json['imageUrl'];
-    iV = json['__v'];
-    categoryID = json['categoryID'];
-    time = json['time'];
     if (json['additives'] != null) {
       additives = <Additives>[];
       json['additives'].forEach((v) {
@@ -62,21 +53,18 @@ class Food {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['_id'] = foodID;
-    data['title'] = title;
+    data['foodID'] = foodID;
+    data['restaurantCode'] = restaurantCode;
+    data['categoryID'] = categoryID;
+    data['name'] = name;
     data['foodTags'] = foodTags;
     data['foodType'] = foodType;
-    data['code'] = code;
     data['isAvailable'] = isAvailable;
-    data['restaurant'] = restaurant;
     data['rating'] = rating;
     data['ratingCount'] = ratingCount;
     data['description'] = description;
     data['price'] = price;
     data['imageUrl'] = imageUrl;
-    data['__v'] = iV;
-    data['categoryID'] = categoryID;
-    data['time'] = time;
     if (additives != null) {
       data['additives'] = additives!.map((v) => v.toJson()).toList();
     }

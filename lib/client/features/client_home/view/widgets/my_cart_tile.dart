@@ -40,7 +40,7 @@ class MyCartTile extends StatelessWidget {
                   children: [
                     //food name
                     Text(
-                      cartItem.food.title!,
+                      cartItem.food.name!,
                       style: const TextStyle(
                         color: kGray,
                         fontSize: 18,
